@@ -1,0 +1,39 @@
+[Unit]
+Description=Algorithmic Trading Bot for Indian Stock Markets
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/trading-bot
+Environment="PATH=/home/ubuntu/trading-bot/venv/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONPATH=/home/ubuntu/trading-bot"
+ExecStart=/home/ubuntu/trading-bot/venv/bin/python -m src.trading_bot
+
+# Restart policy
+Restart=always
+RestartSec=10
+StartLimitBurst=5
+StartLimitInterval=60
+
+# Logging
+StandardOutput=append:/home/ubuntu/trading-bot/data/logs/trading_bot.log
+StandardError=append:/home/ubuntu/trading-bot/data/logs/trading_bot_error.log
+SyslogIdentifier=trading-bot
+
+# Security
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/ubuntu/trading-bot/data
+
+# Resource limits
+LimitNOFILE=4096
+MemoryLimit=1G
+CPUQuota=80%
+
+[Install]
+WantedBy=multi-user.target

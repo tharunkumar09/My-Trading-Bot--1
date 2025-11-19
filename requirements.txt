@@ -1,0 +1,60 @@
+# Core Trading Dependencies
+upstox-python-sdk==2.0.0
+smartapi-python==1.3.4
+
+# Data Analysis & Processing
+pandas==2.1.4
+numpy==1.26.2
+yfinance==0.2.33
+nsepython==2.8
+
+# Technical Analysis
+ta-lib-binary==0.4.28
+pandas-ta==0.3.14b0
+
+# Backtesting
+vectorbt==0.26.1
+backtrader==1.9.78.123
+
+# Visualization
+matplotlib==3.8.2
+plotly==5.18.0
+seaborn==0.13.0
+
+# API & Network
+requests==2.31.0
+websocket-client==1.7.0
+urllib3==2.1.0
+
+# Configuration & Environment
+python-dotenv==1.0.0
+pyyaml==6.0.1
+
+# Scheduling & Automation
+schedule==1.2.0
+apscheduler==3.10.4
+
+# Logging & Monitoring
+loguru==0.7.2
+
+# News & Sentiment Analysis (for market shocks)
+newsapi-python==0.2.7
+vaderSentiment==3.3.2
+textblob==0.17.1
+
+# Database (optional, for storing trades)
+sqlalchemy==2.0.23
+pymongo==4.6.1
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+
+# Deployment
+gunicorn==21.2.0
+supervisor==4.2.5
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3.post1
+tenacity==8.2.3  # For retry logic
